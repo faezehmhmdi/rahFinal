@@ -482,7 +482,7 @@ create function findPlaceId (n varchar(255))
 	returns int unsigned
 begin
 	declare myid int unsigned;
-	set myid = (select id from Place where Place.name = name);
+	set myid = (select id from Place where Place.name = n);
 	return myid;
 end
 //
