@@ -119,7 +119,7 @@ begin
         insert into Hosts values (null, hostName, manager);
 		return (select LAST_INSERT_ID());
     else
-    	return 0;
+    	return return (select MAX(id) from Hosts as h where (h.name = hostName) and (h.manager = manager));
     end if;
 end
 //
