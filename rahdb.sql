@@ -319,7 +319,7 @@ create function addConference(request_number varchar(255), request_sentDate Date
                               start_time time(0), end_time time(0), isCanceled boolean, isHost boolean,
 							  hname varchar(255), hmanager varchar(255),placeName varchar(255), platformName varchar(255),
 							  platUrl varchar(2048), platDescription text, supnName varchar(255), supTelephone varchar(16),
-							  ,confDesc text, confGuests text)
+							  confDesc text, confGuests text)
     returns int unsigned
 begin
 	declare placeId int unsigned;
