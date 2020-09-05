@@ -487,4 +487,20 @@ begin
 end
 //
 delimiter ;
-	
+				       
+delimiter //
+create function deleteConf (id int unsigned)
+	returns char(64)
+begin
+	declare res char(64);
+	if (select count(*) from Conference as c where (c.id = id)) = 1 then
+		delete from Conference as co
+		where co.id = id;
+		set res = 'deleted';
+	else
+		set res = 'problem';
+	end if;
+	return res;
+end
+//
+delimiter ;	
